@@ -11,7 +11,7 @@ RUN apk add --update ca-certificates \
  && apk add --update -t deps curl  \
  && apk add --update gettext tar gzip \
  && apk update && apk upgrade \
- && apk add --no-cache bash git openssh \
+ && apk add --no-cache bash git openssh alpine-sdk \
  && curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
  && curl -L https://storage.googleapis.com/kubernetes-helm/${HELM_FILENAME} | tar xz && mv linux-amd64/helm /bin/helm && rm -rf linux-amd64 \
  && chmod +x /usr/local/bin/kubectl \
